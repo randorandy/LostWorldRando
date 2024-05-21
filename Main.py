@@ -186,8 +186,10 @@ def write_rom(game: Game, romWriter: Optional[RomWriter] = None) -> str:
     #Fix BT Boyons Room State
     romWriter.writeBytes(0x79a52, b"\x56")
 
+    print("Finalizing Rom...")
     romWriter.finalizeRom(rom1_path)
-
+    
+    print("Patching Rom...")
     ipspatch.apply_patch(rom1_path,"shortmessageboxes_ver3.ips")
 
     print("Done!")
