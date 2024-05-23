@@ -190,7 +190,7 @@ def write_rom(game: Game, romWriter: Optional[RomWriter] = None) -> str:
     romWriter.finalizeRom(rom1_path)
     
     print("Patching Rom...")
-    ipspatch.apply_patch(rom1_path,"shortmessageboxes_ver3.ips")
+    #ipspatch.apply_patch(rom1_path,"shortmessageboxes_ver3.ips")
 
     print("Done!")
     print(f"Filename is {rom_name}")
