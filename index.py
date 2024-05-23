@@ -72,11 +72,8 @@ def roll4() -> None:
     # see if hint_data is None to know if it failed
     print("roll4 initiated")
     if rom_writer and game:
-        print(" write_rom")
         rom_name = write_rom(game, rom_writer)
-        print(" decode")
         js.modified_rom_data = rom_writer.getBase64RomData().decode()
-        print(" rom_name")
         js.rom_name = rom_name
 
         js.spoiler_text = get_spoiler(game)
