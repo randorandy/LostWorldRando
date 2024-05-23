@@ -117,7 +117,6 @@ def assumed_fill(game: Game) -> tuple[bool]:
         f"{n_items_to_place} items to put in {len(game.all_locations)} locations"
     print(f"Starting with {fill_algorithm.count_items_remaining()} items to place")
     while fill_algorithm.count_items_remaining():
-        print(f"Continuing with {fill_algorithm.count_items_remaining()} items to place")
         placePair = fill_algorithm.choose_placement(dummy_locations, loadout)
         if placePair is None:
             message = ('Item placement was not successful in assumed. '
@@ -187,11 +186,9 @@ def write_rom(game: Game, romWriter: Optional[RomWriter] = None) -> str:
     #Fix BT Boyons Room State
     romWriter.writeBytes(0x79a52, b"\x56")
 
-    print("Finalizing Rom...")
     romWriter.finalizeRom(rom1_path)
-    
-    print("Patching Rom...")
-    #ipspatch.apply_patch(rom1_path,"shortmessageboxes_ver3.ips")
+
+    ipspatch.apply_patch(rom1_path,"shortmessageboxes_ver3.ips")
 
     print("Done!")
     print(f"Filename is {rom_name}")
