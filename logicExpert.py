@@ -258,7 +258,7 @@ swampSuperWestFall = LogicShortcut(lambda loadout: (
     ) and
     (
         (powerBomb8 in loadout) or
-        (canIBJ in loadout)
+        (canIBJ in loadout) or
         (Screw in loadout)
     )
 ))
