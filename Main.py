@@ -117,6 +117,7 @@ def assumed_fill(game: Game) -> tuple[bool]:
         f"{n_items_to_place} items to put in {len(game.all_locations)} locations"
     print(f"{fill_algorithm.count_items_remaining()} items to place")
     while fill_algorithm.count_items_remaining():
+        print(f"{fill_algorithm.count_items_remaining()} items to place")
         placePair = fill_algorithm.choose_placement(dummy_locations, loadout)
         if placePair is None:
             message = ('Item placement was not successful in assumed. '
