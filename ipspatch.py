@@ -61,11 +61,11 @@ def apply_patch(rom, patch):
         print('Error: invalid patch file (bad footer)')
         return
 
-    # Backup original ROM
-    rom_bak = rom + '.bak'
-    shutil.copy(rom, rom_bak)
-    print('Backup -> {}'.format(rom_bak))
-    print('Patch -> {}'.format(rom))
+    # Backup original ROM  *commenting out for web
+    #rom_bak = rom + '.bak'
+    #shutil.copy(rom, rom_bak)
+    #print('Backup -> {}'.format(rom_bak))
+    #print('Patch -> {}'.format(rom))
 
     # Apply patch
     i = 5
