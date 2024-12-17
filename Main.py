@@ -187,6 +187,7 @@ def write_rom(game: Game, romWriter: Optional[RomWriter] = None) -> str:
     romWriter.writeBytes(0x79a52, b"\x56")
 
     romWriter.rom_data = ips.patch(romWriter.rom_data,"shortmessageboxes_ver3.ips")
+    time.sleep(0.01)
     
     romWriter.finalizeRom(rom1_path)
 
