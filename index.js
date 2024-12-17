@@ -94,7 +94,7 @@ function setup_roll_button() {
         roll_button.disabled = true;
         const status_div = document.getElementById("status");
         status_div.innerText = "rolling...";
-        await sleep(0.01);
+        await sleep(0.1);
         const roll1_success = python_roll1_function();
         if (! roll1_success) {
             console.log("roll1 failed");
@@ -102,9 +102,9 @@ function setup_roll_button() {
             roll_button.disabled = false;
             return;
         }
-        await sleep(0.01)
+        await sleep(0.1)
         python_roll2_function(JSON.stringify(params));
-        await sleep(0.01)
+        await sleep(0.05)
         const roll3_success = python_roll3_function();
         if (! roll3_success) {
             console.log("roll3 failed");
@@ -112,14 +112,14 @@ function setup_roll_button() {
             roll_button.disabled = false;
             return;
         }
-        await sleep(0.01);
+        await sleep(0.05);
         python_roll4_function();
-        await sleep(0.01);
+        await sleep(0.05);
 
         if (modified_rom_data.length) {
-            await sleep(0.01);
+            await sleep(0.05);
             const data_blob = b64toBlob(modified_rom_data);
-            await sleep(0.01);
+            await sleep(0.05);
 
             // rom download link
             const a = document.createElement("a");
