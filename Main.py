@@ -15,7 +15,7 @@ import fillAssumed
 import areaRando
 from romWriter import RomWriter
 from solver import solve
-import ips
+# import ips
 
 
 def plmidFromHiddenness(itemArray, hiddenness, visible = True) -> bytes:
