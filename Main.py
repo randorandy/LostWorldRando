@@ -15,7 +15,7 @@ import fillAssumed
 import areaRando
 from romWriter import RomWriter
 from solver import solve
-import ipspatch
+import ips
 
 
 def plmidFromHiddenness(itemArray, hiddenness, visible = True) -> bytes:
@@ -188,7 +188,7 @@ def write_rom(game: Game, romWriter: Optional[RomWriter] = None) -> str:
 
     romWriter.finalizeRom(rom1_path)
 
-    ipspatch.apply_patch(rom1_path,"shortmessageboxes_ver3.ips")
+    romWriter.rom_data = ips.patch(romWriter.rom_data,"shortmessageboxes_ver3.ips")
 
     print("Done!")
     print(f"Filename is {rom_name}")
