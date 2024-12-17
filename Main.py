@@ -188,7 +188,6 @@ def write_rom(game: Game, romWriter: Optional[RomWriter] = None) -> str:
 
     # romWriter.rom_data = ips.patch(romWriter.rom_data,"shortmessageboxes_ver3.ips")
     # for now, it's showing up as an invalid ips patch for some reason
-    time.sleep(0.01)
     
     romWriter.finalizeRom(rom1_path)
 
