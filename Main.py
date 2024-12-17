@@ -186,8 +186,9 @@ def write_rom(game: Game, romWriter: Optional[RomWriter] = None) -> str:
     #Fix BT Boyons Room State
     romWriter.writeBytes(0x79a52, b"\x56")
 
-    romWriter.rom_data = ips.patch(romWriter.rom_data,"shortmessageboxes_ver3.ips")
-    time.sleep(0.01)
+    #romWriter.rom_data = ips.patch(romWriter.rom_data,"shortmessageboxes_ver3.ips")
+    #time.sleep(0.01)
+    # for now, it's showing up as an invalid ips patch for some reason
     
     romWriter.finalizeRom(rom1_path)
 
